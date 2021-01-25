@@ -59,10 +59,10 @@ Content-Length: 1149
     "key.converter.schemas.enable": "false",
     "value.converter": "org.apache.kafka.connect.json.JsonConverter",
     "value.converter.schemas.enable": "false",
-    "schema.filename": "/usr/share/my-configs/s3-test.avsc",
-    "schema.keyfield": "fields",
+    "schema.string": "{\r\n    \"name\": \"mcdonald_order\",\r\n    \"type\": \"record\",\r\n    \"fields\":\r\n    [\r\n        {\r\n            \"name\": \"menu_name\",\r\n            \"type\": {\r\n                \"type\": \"string\",\r\n                \"arg.properties\": {\r\n                    \"options\": [\r\n                        \"Big Mac\",\r\n                        \"McSpicy Shanghai Burger\",\r\n                        \"Bulgogi Burger\",\r\n                        \"1955 Burger\",\r\n                        \"Bacon Tomato Deluxe\"\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        {\r\n            \"name\": \"quantity\",\r\n            \"type\": {\r\n                \"type\": \"int\",\r\n                \"arg.properties\": {\r\n                    \"range\": {\r\n                        \"min\": 1,\r\n                        \"max\": 10\r\n                    }\r\n                }\r\n            }\r\n        },\r\n        {\r\n            \"name\": \"order_requests\",\r\n            \"type\": {\r\n                \"type\": \"string\",\r\n                \"arg.properties\": {\r\n                    \"regex\": \"[a-zA-Z]*\",\r\n                    \"length\": 50\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+    "schema.keyfield": "menu_name",
     "max.interval": 1000,
     "iterations": 10000000,
     "tasks.max": "1"
   }
-}%
+}
